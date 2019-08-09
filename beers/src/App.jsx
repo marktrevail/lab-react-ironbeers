@@ -9,7 +9,7 @@ import BeerDetail from './pages/BeerDetail';
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid p-0">
         
         <Switch>
           <Route exact path='/' component={Home} />
