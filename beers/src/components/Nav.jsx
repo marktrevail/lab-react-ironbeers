@@ -7,7 +7,7 @@ class Nav extends Component {
         <nav className="navbar navbar-dark bg-primary">
           
           <Link className="navbar-brand" to='/'>
-            <img class="icon-home" src="/img/home-icon.png" alt="Home icon"/>
+            <img className="icon-home" src="/img/home-icon.png" alt="Home icon"/>
           </Link>
 
         </nav>

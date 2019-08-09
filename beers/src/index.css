@@ -15,3 +15,7 @@ aside {
 .icon-home{
   height: 30px;
 }
+
+.beers-img-thumbnail {
+  max-height: 150px;  
+}

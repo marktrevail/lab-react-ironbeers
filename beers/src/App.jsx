@@ -6,6 +6,7 @@ import BeerNew from './pages/BeerNew';
 import BeerRandom from './pages/BeerRandom';
 import BeerDetail from './pages/BeerDetail';
 
+
 class App extends Component {
   render() {
     return (
@@ -16,7 +17,7 @@ class App extends Component {
           <Route path='/beer-list' component={BeerList} />
           <Route path='/beer-new' component={BeerNew} />
           <Route path='/beer-random' component={BeerRandom} />
-          <Route path='/beer-detail/:id' component={BeerDetail} />
+          <Route path='/beer-detail/:beerId' component={BeerDetail} />
         </Switch>
       
       </div>
