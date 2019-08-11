@@ -45,7 +45,6 @@ class AddBeer extends Component {
 
   }
   render(){
-      debugger
     return (
       <div className="add-beer">
         <form onSubmit={this.handleFormSubmit} style={{display: "flex", "flex-wrap": "wrap"}}>{/* we don't want the default form submitting behaviour, so we're adding own submit handler   */}
