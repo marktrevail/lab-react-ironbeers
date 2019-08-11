@@ -19,3 +19,7 @@ aside {
 .beers-img-thumbnail {
   max-height: 150px;  
 }
+
+.beers-img-medium {
+  max-height: 250px;  
+}

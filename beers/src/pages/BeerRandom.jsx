@@ -32,9 +32,15 @@ class BeerRandom extends Component {
         
         <Nav />
         
-        <BeerTileDetail
-          {...this.state.beerData}
-        />
+        <div className="row">
+          <div className="col-lg-5 mx-auto col-md-12">
+
+            <BeerTileDetail
+              {...this.state.beerData}
+            />
+
+          </div>
+        </div>
 
       </div>
     )

@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom';
 
 class Home extends Component {
   render() {
+
+    console.log(process.env.REACT_APP_BEER_API);
+
     return (
      <div>
      

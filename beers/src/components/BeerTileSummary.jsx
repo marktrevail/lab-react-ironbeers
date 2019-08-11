@@ -10,8 +10,8 @@ class BeerTileSummary extends Component {
     return (
         <Link key={this.props.index} className='list-group-item list-group-item-action' to={`/beer-detail/${this.props._id}`}>
 
-          <div className="d-flex w-100 justify-content-between">
-            <img className="img-fluid beers-img-thumbnail" src={this.props.image_url} alt={this.props.name}/>
+          <div className="d-flex w-100">
+            <img className="img-fluid beers-img-thumbnail mr-4" src={this.props.image_url} alt={this.props.name}/>
             <div>
               <h3>{this.props.name}</h3>
               <h5>{this.props.tagline}</h5>
