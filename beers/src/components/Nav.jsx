@@ -10,10 +10,29 @@ class Nav extends Component {
             <img className="icon-home" src="/img/home-icon.png" alt="Home icon"/>
           </Link>
 
-          <Link className="text-white" to='/auth/signup'>
-            Sign up
-          </Link>
+          {localStorage.user ?
 
+            <div>
+              <Link className="text-white nav-menu-link" to='/profile'>
+                Profile
+              </Link>
+              <Link className="text-white nav-menu-link" to='/auth/logout'>
+                Log Out
+              </Link>
+            </div>
+
+            :
+            <div>
+              <Link className="text-white nav-menu-link" to='/auth/login'>
+                Log In
+              </Link>
+
+              <Link className="text-white nav-menu-link" to='/auth/signup'>
+                Sign Up
+              </Link>
+            </div>
+
+            }
 
         </nav>
     )

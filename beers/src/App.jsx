@@ -6,6 +6,8 @@ import BeerNew from './pages/BeerNew';
 import BeerRandom from './pages/BeerRandom';
 import BeerDetail from './pages/BeerDetail';
 import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
+import LogOut from './pages/LogOut';
 
 class App extends Component {
   render() {
@@ -20,7 +22,8 @@ class App extends Component {
           <Route path='/beer-detail/:beerId' component={BeerDetail} />
 
           <Route path='/auth/signup' component={SignUp} />
-
+          <Route path='/auth/login' component={LogIn} />
+          <Route path='/auth/logout' component={LogOut} />
         </Switch>
       
       </div>

@@ -23,3 +23,8 @@ aside {
 .beers-img-medium {
   max-height: 250px;  
 }
+
+.nav-menu-link {
+  margin-left: 15px;
+  margin-right: 5px;
+}
