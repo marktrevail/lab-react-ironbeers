@@ -29,7 +29,7 @@ class LogIn extends Component {
   
   handleFormSubmit = (e)=> {
     e.preventDefault();
-    auth.login(this.state.user)
+    auth.login(this.state.user.username, this.state.user.password)
         .then(()=> {
             this.setState({error: ''});
             this.props.history.push('/');

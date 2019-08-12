@@ -13,6 +13,7 @@ class Nav extends Component {
           {localStorage.user ?
 
             <div>
+
               <Link className="text-white nav-menu-link" to='/profile'>
                 Profile
               </Link>
