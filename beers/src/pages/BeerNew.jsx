@@ -49,10 +49,7 @@ class BeerNew extends Component {
           first_brewed: '',
           contributed_by: '',
           successfullySubmitted: true
-        });      
-      /* extra
-        https://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router
-        */
+        }); 
     })
     .catch((err)=> {
         console.log(err)

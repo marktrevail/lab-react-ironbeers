@@ -10,6 +10,11 @@ class Nav extends Component {
             <img className="icon-home" src="/img/home-icon.png" alt="Home icon"/>
           </Link>
 
+          <Link className="text-white" to='/auth/signup'>
+            Sign up
+          </Link>
+
+
         </nav>
     )
   }
