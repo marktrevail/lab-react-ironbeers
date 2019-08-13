@@ -28,3 +28,7 @@ aside {
   margin-left: 15px;
   margin-right: 5px;
 }
+
+.container-profile > * {
+  margin: 30px;
+}

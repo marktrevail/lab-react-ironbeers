@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from '../components/Nav';
+import MainLayout from '../layout/MainLayout';
 import BeerTileDetail from '../components/BeerTileDetail';
 import axios from 'axios';
 
@@ -28,10 +28,8 @@ class BeerRandom extends Component {
   render() {
 
     return (
-      <div>
-        
-        <Nav />
-        
+      <MainLayout>
+
         <div className="row">
           <div className="col-lg-5 mx-auto col-md-12">
 
@@ -42,7 +40,7 @@ class BeerRandom extends Component {
           </div>
         </div>
 
-      </div>
+      </ MainLayout>
     )
   }
 }

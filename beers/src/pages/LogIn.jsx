@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from '../components/Nav';
+import MainLayout from '../layout/MainLayout';
 import {Form, Button} from 'react-bootstrap';
 import AuthService from "../utils/AuthService";
 const auth = new AuthService();
@@ -43,9 +43,8 @@ class LogIn extends Component {
   render() {
 
     return (
-      <div>
-        
-        <Nav />
+
+      <MainLayout>
 
         <div className="row">
           <div className="col-lg-5 mx-auto col-md-12">
@@ -69,7 +68,7 @@ class LogIn extends Component {
           </div>
         </div>
 
-      </div>
+      </ MainLayout>
     )
   }
 }

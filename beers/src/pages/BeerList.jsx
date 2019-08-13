@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Nav from '../components/Nav';
+import MainLayout from '../layout/MainLayout';
 import BeerTileSummary from '../components/BeerTileSummary';
 import { Form } from 'react-bootstrap';
 
@@ -49,10 +49,8 @@ constructor(props) {
   render() {
 
     return (
-      <div>
+      <MainLayout>
         
-        <Nav />
-
         <div className="row">
           <div className="col-lg-5 mx-auto col-md-12">
 
@@ -74,7 +72,7 @@ constructor(props) {
   
           </div>
         </div>
-      </div>
+      </ MainLayout>
     )
   }
 }

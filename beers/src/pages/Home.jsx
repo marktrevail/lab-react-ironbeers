@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
-import Nav from '../components/Nav'
+import MainLayout from '../layout/MainLayout';
 
 class Home extends Component {
   render() {
 
-    console.log(process.env.REACT_APP_BEER_API);
-
     return (
-     <div>
-     
-      <Nav />
+    <MainLayout>
 
       <Link to='/beer-list'>
         <div className="row">
@@ -54,7 +50,7 @@ class Home extends Component {
         </div>
       </div>
 
-    </div>
+    </ MainLayout>
     )
   }
 }
