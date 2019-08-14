@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MainLayout from '../layout/MainLayout';
-import qs from "querystring"; // used for parsing a javascript object into the right format (x-www-form-urlencoded)
+// import qs from "querystring"; // used for parsing a javascript object into the right format (x-www-form-urlencoded)
 import axios from "axios";
 import {Form, Button, Alert} from 'react-bootstrap';
 
@@ -8,7 +8,7 @@ import {Form, Button, Alert} from 'react-bootstrap';
 class BeerNew extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
   
     this.state = {
       name: '',
@@ -18,9 +18,13 @@ class BeerNew extends Component {
       attenuation_level: '',
       first_brewed: '',
       contributed_by: '',
+      beer_image: '',
       successfullySubmitted: false
-    }
-  }
+    };
+
+    this.formRef = React.createRef();
+
+  };
 
   handleFormChange = (e)=> {
     this.setState({ 
@@ -30,11 +34,30 @@ class BeerNew extends Component {
   };
 
   handleFormSubmit = (e)=> {
+    e.preventDefault(); // disable the default form behaviour (redirecting to a new page)
+    let form = new FormData(this.formRef.current);
+    axios({
+      method: "POST",
+      url: `${process.env.REACT_APP_API}/beers/new`,
+      data: form
+    })
+    .then((response)=> {
+      this.props.history.push("/profile")
+    })
+    .catch((error)=> {
+      this.setState({error: error.message})
+    })
+  }
+
+
+  handleFormSubmit = (e)=> {
     e.preventDefault(); // (don't redirect to new page)
+    let form = new FormData(this.formRef.current);
     axios({
         method: "POST",
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        data:  qs.stringify(this.state), // don't send data in json format => cors error
+//        data:  qs.stringify(this.state), // don't send data in json format => cors error
+        data: form,  // Can also send data to this api in form format
         url: `${process.env.REACT_APP_BEER_API}/beers/new`
       })
     .then(()=> {
@@ -48,6 +71,7 @@ class BeerNew extends Component {
           attenuation_level: '',
           first_brewed: '',
           contributed_by: '',
+          beer_image: '',
           successfullySubmitted: true
         }); 
     })
@@ -65,7 +89,7 @@ class BeerNew extends Component {
         <div className="row">
           <div className="col-lg-5 mx-auto col-md-12">
 
-            <Form className="mt-3" onSubmit={this.handleFormSubmit}>
+            <Form ref={this.formRef} className="mt-3" onSubmit={this.handleFormSubmit}>
 
               <Form.Group controlId="name">
                 <Form.Label>Name</Form.Label>
@@ -102,6 +126,11 @@ class BeerNew extends Component {
                 <Form.Control name="contributed_by" type="text" placeholder="" value={this.state.contributed_by} onChange={this.handleFormChange}/>
               </Form.Group>
 
+              <Form.Group controlId="beer_image">
+                <Form.Label>Beer picture</Form.Label>
+                <Form.Control name="beer_image" type="file" placeholder="" value={this.state.beer_image} onChange={this.handleFormChange}/>
+              </Form.Group>
+
               <Button type="submit">Submit</Button>
 
             </Form>
@@ -118,7 +147,7 @@ class BeerNew extends Component {
       </ MainLayout>
     )
   }
-}
+};
 
 
 export default BeerNew;
